@@ -15,12 +15,6 @@
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| post_code      | integer    | null: false                    |
-| prefectures    | string     | null: false                    |
-| municipalities | string     | null: false                    |
-| address        | string     | null: false                    |
-| building_name  | string     |                                |
-| telephone      | integer    | null: false                    |
 | user           | references | null: false, foreign_key: true |
 
 ### Association
@@ -44,3 +38,18 @@
 ### Association
 - belongs_to :user
 - belongs_to :order
+
+## addressesテーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| post_code      | integer    | null: false                    |
+| prefectures    | string     | null: false                    |
+| municipalities | string     | null: false                    |
+| address        | string     | null: false                    |
+| building_name  | string     |                                |
+| telephone      | integer    | null: false                    |
+| item           | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :item
