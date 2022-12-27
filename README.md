@@ -11,14 +11,22 @@
 | first_name_kana    | string | null: false               |
 | birthday           | date   | null: false               |
 
+### Association
+- has_many :items
+- has_one :order
+
 ## ordersテーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
+- belongs_to :item
+- has_one :address
+
 
 ## itemsテーブル
 
@@ -26,30 +34,29 @@
 | ------------- | ---------- | ------------------------------ |
 | name          | string     | null: false                    |
 | content       | text       | null: false                    |
-| category      | string     | null: false                    |
+| category_id   | integer    | null: false                    |
 | status        | string     | null: false                    |
 | charge        | string     | null: false                    |
-| area          | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | delivery_days | string     | null: false                    |
 | price         | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
-| order         | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- belongs_to :order
+- has_one :order
 
 ## addressesテーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| post_code      | integer    | null: false                    |
-| prefectures    | string     | null: false                    |
+| post_code      | string     | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | municipalities | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
-| telephone      | integer    | null: false                    |
-| item           | references | null: false, foreign_key: true |
+| telephone      | string     | null: false                    |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :item
+- belongs_to :order
