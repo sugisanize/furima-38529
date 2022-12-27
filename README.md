@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :items
-- has_one :order
+- has_many :orders
 
 ## ordersテーブル
 
@@ -30,17 +30,17 @@
 
 ## itemsテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| name          | string     | null: false                    |
-| content       | text       | null: false                    |
-| category_id   | integer    | null: false                    |
-| status        | string     | null: false                    |
-| charge        | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| delivery_days | string     | null: false                    |
-| price         | integer    | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+| content        | text       | null: false                    |
+| category_id    | integer    | null: false                    |
+| status_id      | integer    | null: false                    |
+| charge_id      | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| deliveryday_id | integer    | null: false                    |
+| price          | integer    | null: false                    |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user

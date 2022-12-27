@@ -13,7 +13,7 @@
                 <mxCell id="4" value="itemsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry y="240" width="280" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="name（string型,NOT NULL）&#10;content（text型,NOT NULL）&#10;category_id（integer型,NOT NULL）&#10;status（string型,NOT NULL）&#10;charge（string型,NOT NULL）&#10;prefecture_id（integer型,NOT NULL）&#10;delivery_days（string型,NOT NULL）&#10;price（integer型,NOT NULL）&#10;user（references型,NOT NULL,外部キー）&#10;※imageはactivestorageで実装" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
+                <mxCell id="5" value="name（string型,NOT NULL）&#10;content（text型,NOT NULL）&#10;category_id（integer型,NOT NULL）&#10;status_id（integer型,NOT NULL）&#10;charge_id（integer型,NOT NULL）&#10;prefecture_id（integer型,NOT NULL）&#10;deliveryday_id（integer型,NOT NULL）&#10;price（integer型,NOT NULL）&#10;user（references型,NOT NULL,外部キー）&#10;※imageはactivestorageで実装" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="4" vertex="1">
                     <mxGeometry y="30" width="280" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="ordersテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
