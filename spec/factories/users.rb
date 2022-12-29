@@ -3,7 +3,7 @@ FactoryBot.define do
     gimei = Gimei.name
     nickname              {Faker::Name.initials}
     email                 {Faker::Internet.free_email}
-    password              {Faker::Internet.password(min_length: 6)}
+    password              {'123abc'}
     password_confirmation {password}
     last_name             {gimei.last.kanji}
     first_name            {gimei.first.kanji}
