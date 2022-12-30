@@ -55,27 +55,27 @@ RSpec.describe Item, type: :model do
       it 'nameが41文字以上では登録できない' do
         @item.name = Faker::Lorem.characters(41)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name is too long (maximum is 40 characters)")
+        expect(@item.errors.full_messages).to include('Name is too long (maximum is 40 characters)')
       end
       it 'contentが1001文字以上では登録できない' do
         @item.content = 'あ' * 1001
         @item.valid?
-        expect(@item.errors.full_messages).to include("Content is too long (maximum is 1000 characters)")
+        expect(@item.errors.full_messages).to include('Content is too long (maximum is 1000 characters)')
       end
       it 'priceが299以下では登録できない' do
         @item.price = '299'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceが10000000以上では登録できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it 'priceが全角数値では登録できない' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
     end
   end
