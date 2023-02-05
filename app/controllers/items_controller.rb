@@ -20,10 +20,15 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @order = Order.where(id: params[:id])
   end
 
   def edit
-    redirect_to root_path unless @item.user == current_user
+    if current_user.id != @item.user_id
+      redirect_to root_path
+    elsif @item.order.present?
+      redirect_to root_path
+    end
   end
 
   def update
