@@ -12,7 +12,6 @@ class OrderAddress
     validates :telephone, format: { with: /\A[0-9]{10,11}\z/ }
   end
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-  
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
